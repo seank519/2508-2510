@@ -1,3 +1,4 @@
+
 class Queue :
     def __init__(self) :
         self.items = []
@@ -45,8 +46,8 @@ print(s.size())
 
 
 
-q=True
-wf=input('뭐 먹을래? 감자 보리 밀 쌀      ')
+q=True                                       #f= 수확량
+wf=input('뭐 먹을래? 감자 보리 밀 쌀 인공 음식     ')
 if wf=='감자' :
     f=292
 elif wf=='보리' :
@@ -58,7 +59,7 @@ elif wf=='쌀' :
 elif wf=='채소' :
     f=2
 elif wf=='빵' :
-    print('빵이 없으면 캐이크를 먹어')
+    print('빵이 없으면 캐이크를 먹어-말이 안통하네트')
     q=False
 elif wf=='인공 음식' :
     f=10000000
@@ -81,18 +82,18 @@ while q :
         gt.append(g)
         wt.append(w)
         ht.append(h)
-        y=y+1
+        y=y+1                         #해는 1년씩 늘어남
         nw=int(a*0.1)
         bh=int(b*h)
         bh1=int(bh*0.4)
         bh2=int(bh*0.1)
         f1=int(f*0.1)
-        a=a+w-nw+h+bh2-f1
-        g=g-bh+f-h
+        a=a+w-nw+h+bh2-f1            #1년 후 이산화탄소의 양
+        g=g-bh+f-h                   #1년 후 화석 연료의 양
         w=nw
         dh=int(0.08*h)
         nh=int(0.02*bh)
-        if a<0 :
+        if a<3000 :                     #이산화탄소 농도가 너무 낮으면 호흡이 안되서 농사가 망함
             print('서기', end='')
             print(y, end='')
             print('년', end=' ')
@@ -101,7 +102,7 @@ while q :
             at.append(a)
             q=False
             break
-        elif f-h<0 :
+        elif f-h<0 :                #인구에 비해 수확량이 적으면 정부에 반기를 든 분노한 시민들이 폭동을 일으킵니다.
             print('서기', end='')
             print(y, end='')
             print('년', end=' ')
@@ -109,7 +110,7 @@ while q :
             print('수확량이 부족합니다 폭동이 일어났습니다 you die')
             q=False
             break
-        elif g<0 :
+        elif g<0 :                  #화석 연료가 없어서 너는 굶어 죽습니다.
             print('서기', end='')
             print(y, end='')
             print('년', end=' ')
@@ -117,7 +118,7 @@ while q :
             gt.append(g)
             q=False
             break
-        elif a>12000:
+        elif a>30000:               #이산화탄소 농도가 너무 높으면 질식사합니다
             print('서기', end='')
             print(y, end='')
             print('년', end=' ')
@@ -125,7 +126,7 @@ while q :
             at.append(a)
             q=False
             break
-        elif f-h>240 :
+        elif f-h>500 :             #수확량이 인구에 비해 너무 많으면 넘쳐나는 음식물 쓰레기를 주체할 수 없게 됩니다.
             print('서기', end='')
             print(y, end='')
             print('년', end=' ')
@@ -142,7 +143,7 @@ while q :
     plt.title('a') # 제목 넣기
 
     plt.xlim(0,len(at)+1) # x축 값 범위
-    plt.ylim(8000,21000) # y축 값 범위
+    plt.ylim(1000,21000) # y축 값 범위
 
     plt.xlabel('x축') # x축 레이블
     plt.ylabel('y축') # y축 레이블
