@@ -1,4 +1,3 @@
-
 class Queue :
     def __init__(self) :
         self.items = []
@@ -10,13 +9,16 @@ class Queue :
         return self.items == []
     def size(self) :
         return len(self.items)
+    
+#지구를 구성하는 각 계의 탄소 소비량
 g = Queue()
 k = Queue()
 b = Queue()
 s = Queue()
+
 for i in range(0,100):
     g.enqueue(1)
-    k.enqueue(1)
+    k.enqueue(1)i
     b.enqueue(1)
     s.enqueue(1)
 a1 = g.size() // 3
@@ -45,7 +47,7 @@ print(b.size())
 print(s.size())
 
 
-
+#q값에 따라 인류의 미래가 결정됨
 q=True                                       #f= 수확량
 wf=input('뭐 먹을래? 감자 보리 밀 쌀 인공 음식     ')
 if wf=='감자' :
@@ -76,7 +78,7 @@ ht=[]
 w=1000
 y=2019
 while q :
-    b=int(input('편안함'))
+    b=int(input('편안함(편안함이 클수록 인류의 삶은 편해지지만 자원 소비량이 커집니다) : )'))
     for i in range(1,41):
         at.append(a)
         gt.append(g)
