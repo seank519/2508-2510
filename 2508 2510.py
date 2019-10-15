@@ -50,24 +50,28 @@ print(s.size())
 #q값에 따라 인류의 미래가 결정됨
 q=True                                       #f= 수확량
 wf=input('뭐 먹을래? 감자 보리 밀 쌀 인공 음식     ')
-if wf=='감자' :
-    f=292
-elif wf=='보리' :
-    f=176
-elif wf=='밀' :
-    f=248
-elif wf=='쌀' :
-    f=264
-elif wf=='채소' :
-    f=2
-elif wf=='빵' :
-    print('빵이 없으면 캐이크를 먹어-말이 안통하네트')
-    q=False
-elif wf=='인공 음식' :
-    f=10000000
-else :
-    print('그런 거 없다 반동분자야')
-    q=False
+def GetFoodAmount(x) :
+
+    return {'감자':292, '보리':176, '밀':248, '쌀':264, '채소':2, '빵':-1, '인공 음식':10000000}.get(x, -2)
+
+
+
+
+wf=input('뭐 먹을래? 감자 보리 밀 쌀 인공 음식     ')
+
+f = GetFoodAmount(wf)
+
+if f < 0 :
+
+    q = False
+
+    if f == -1 :
+
+        print('빵이 없으면 캐이크를 먹어-말이 안통하네트')
+
+    else :
+
+        print('그런 거 없다 반동분자야')
 a=10000
 g=10000
 h=70
